@@ -1,0 +1,45 @@
+<app-admin-navigation></app-admin-navigation>
+<div class="container">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Gönderiler" id="posts">
+            <app-home class="mt-5 mb-5"></app-home>
+        </mat-tab>
+        <mat-tab label="Gönderi Ekle" id="addPost">
+            <form [formGroup]="postAddForm">
+
+                <div class="d-flex justify-content-evenly">
+                <div class="card text-center mat-elevation-z5" style="width: 30rem;">
+                    <div class="card-body">
+                        <div class="mb-2 mt-1">
+                            <h1 class="text-center">
+                                Yeni Post
+                            </h1>
+                        </div>
+                       
+            
+                        <div class="input-group flex-nowrap m-1 mb-3">
+                            <span class="input-group-text" id="addon-wrapping-t">
+                                <mat-icon>title</mat-icon>
+                            </span>
+                            <input type="text" formControlName="title" class="form-control" placeholder="başlık" aria-label="başlık" aria-describedby="addon-wrapping-t">
+                        </div>
+            
+                        <div class="input-group flex-nowrap m-1 mb-3">
+                            <span class="input-group-text" id="addon-wrapping-d">
+                                <mat-icon>description</mat-icon>
+                            </span>
+                            <input type="text" formControlName="description" class="form-control" placeholder="açıklama" aria-label="açıklama" aria-describedby="addon-wrapping-d">
+                        </div>
+                          <div class="mt-2 mb-2">
+                            <div class="d-grid gap-2">
+            
+                                <button mat-raised-button color="warn" (click)="addPost()">Ekle</button>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+                  </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>

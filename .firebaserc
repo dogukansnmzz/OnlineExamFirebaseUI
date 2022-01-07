@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "onlineexam-e849c": {
+      "hosting": {
+        "OnlineExamFirebaseUI": [
+          "onlineexam-e849c"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "onlineexam-e849c"
+  }
+}

@@ -1,0 +1,26 @@
+<div class="mb-5">
+    <div class="mb-5 mt-2" *ngIf="getUser$ | async as User">
+        
+        <div class="text-center fs-5">Hoş Geldiniz {{User.displayName}}</div>
+       
+    </div>
+    <mat-chip-list aria-label="Fish selection">
+
+        <mat-chip routerLink="/exam/list" class="mat-chip-item">Sorular</mat-chip>
+        <mat-chip color="primary" selected (click)="openQuestionAddDialog()" class="mat-chip-item">Soru Ekle</mat-chip>
+
+        <mat-chip color="accent" selected routerLink="/forwarded-replie/list" class="mat-chip-item">Sorulara verilen cevaplar</mat-chip>
+        
+        <!-- <mat-chip routerLink="/student/list" class="mat-chip-item" color="accent" selected>Öğrenciler</mat-chip>
+        <mat-chip routerLink="/student/add" class="mat-chip-item" color="accent" selected>Öğrenci ekle</mat-chip> -->
+
+        <!-- <mat-chip routerLink="/post/list" class="mat-chip-item" color="primary" selected>Gönderiler</mat-chip>
+        <mat-chip routerLink="/post/add" class="mat-chip-item" color="primary" selected>Gönderi ekle</mat-chip> -->
+
+        <mat-chip routerLink="/authentication/new" class="mat-chip-item" color="warn" selected>Yönetici Ekle ve Onunla Giriş yap</mat-chip>
+
+      </mat-chip-list>
+</div>
+<div class="mb-5">
+    <mat-divider></mat-divider>
+</div>

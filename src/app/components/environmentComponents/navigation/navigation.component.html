@@ -1,0 +1,41 @@
+
+
+
+ <mat-drawer-container class="example-container" autosize [hasBackdrop]="true">
+    <mat-toolbar>
+        <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+         <mat-icon>menu</mat-icon>
+       </button>
+       <span>Online Sınav</span>
+       <span class="example-spacer"></span>
+       
+     </mat-toolbar>
+    <mat-drawer #drawer class="example-sidenav bg-light w-25" mode="side">
+        <div class="text-center fs-5 mb-2">Online Sınav Menü</div>
+        <mat-divider></mat-divider>
+        <mat-selection-list class="text-center" #linkList [multiple]="false">
+            <mat-list-option routerLink="/">Ana sayfa</mat-list-option>
+
+
+            <div *ngIf="getUser$ | async as User;else notAuthenticated">
+              <mat-list-option routerLink="/exam/list">Sınavlar</mat-list-option>
+              <mat-list-option routerLink="/panels/select">Panele Git</mat-list-option>
+              <mat-list-option >
+                <button mat-raised-button (click)="logout()">{{User.displayName}} Çıkış Yap</button>
+              </mat-list-option>            
+            </div>
+            <ng-template #notAuthenticated>              
+              <mat-list-option routerLink="/account/login">Giriş yap</mat-list-option>
+              <mat-list-option routerLink="/account/register">Kayıt ol</mat-list-option>
+            </ng-template>
+            
+          </mat-selection-list>
+    </mat-drawer>
+
+   <div class="container">
+       <div class="mt-5">
+            <router-outlet></router-outlet>
+        </div>
+   </div>
+  
+  </mat-drawer-container>

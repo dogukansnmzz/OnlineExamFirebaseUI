@@ -1,0 +1,33 @@
+<div class="card text-center mt-4 mb-4" *ngFor="let question of questions">
+    <div class="card-header">
+        <h3>
+            {{question.title}} -- {{question.time}}
+          </h3>
+    </div>
+    <div class="card-body">
+     
+        <p class="card-text">
+            {{question.description}}    
+        </p>
+    </div>
+    <div class="card-footer">
+        <form [formGroup]="forwardedReplieForm">
+
+                <mat-form-field appearance="fill" class="w-75">
+                    <mat-label>Cevap seçiniz</mat-label>
+                    <mat-select class="w-100 h-100"  name="opp" formControlName="answer">
+                        <mat-option [value]="option" *ngFor="let option of question.options">
+                            {{option}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="mt-5">
+                    <button class="btn btn-primary" (click)="forwardedReplieAdd(question.id)">Gönder</button>
+                </div>
+
+                
+
+        </form>
+  </div>
+
+</div>

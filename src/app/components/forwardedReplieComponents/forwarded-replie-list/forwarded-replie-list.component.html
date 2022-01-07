@@ -1,0 +1,30 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Soru Id</th>
+            <th>Kullanıcı Id</th>
+            <th>Kullanıcı Email</th>
+            <th>Cevap</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let forwardedReplie of forwardedReplies">
+            <td>
+                {{forwardedReplie.id}}
+            </td>
+            <td>
+                {{forwardedReplie.questionId}}
+            </td>
+            <td>
+                {{forwardedReplie.userId}}
+            </td>
+            <td>
+                {{forwardedReplie.email}}
+            </td>
+            <td>
+                {{forwardedReplie.answer}}
+            </td>
+        </tr>
+    </tbody>
+</table>

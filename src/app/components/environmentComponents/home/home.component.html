@@ -1,0 +1,12 @@
+<div class="mt-5">
+    <div class="card text-center mat-elevation-z5 w-100" *ngFor="let post of posts">
+        <div class="card-body">
+            <div class="card-title fs-4 mb-4 mt-2">
+                {{post.title}}
+            </div>
+            <p class="card-text mb-1 mt-3">
+                {{post.description}}
+            </p>
+        </div>
+    </div>
+</div>
